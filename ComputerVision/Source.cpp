@@ -35,9 +35,15 @@ int main(int argc, char** argv)
 	String windowImg1 = "Image 1";
 	String windowImg2 = "Image 2";
 
+	if (argc != 3)
+	{
+		printf("You must enter Exactly two image paths\n");
+		return -1;
+	}
+
 	// Load images and check if they exist
-	sourceImg1 = imread("data/fish.bmp");
-	sourceImg2 = imread("data/submarine.bmp");
+	sourceImg1 = imread(argv[1]);
+	sourceImg2 = imread(argv[2]);
 
 	if (sourceImg1.empty() || sourceImg2.empty())
 	{
